@@ -4,7 +4,8 @@ buffer:
     .int 0
 
 flag:
-    .byte 1
+    .int 1
+
 
 invalid_string:
     .ascii "Invalid"
@@ -37,8 +38,6 @@ lettura:
     cmp $0, %al        # '\0'
     je fine
 
-    # Controlli
-
 space:
     movb (%esi), %al
     cmp $32, %al
@@ -46,8 +45,7 @@ space:
 
     # se prima c'era una cifra
     # push del buffer nello stack (buffer*=flag; flag=1)
-    # poi svuota il buffer
-    # e vai avanti
+    # poi svuota il buffer, e vai avanti
     movb -1(%esi), %al
     cmp $48, %al           # compara con '0'
     jl operator_do_nothing
@@ -56,9 +54,9 @@ space:
     jg operator_do_nothing
 
     movl buffer, %eax       
-    movb flag, %bl
-    mul %bl
-    movb $1, flag
+    movl flag, %ebx
+    mul %ebx
+    movl $1, flag
 
     pushl %eax
     movl $0, buffer
@@ -71,7 +69,7 @@ operator_do_nothing:        # se prima c'era un operatore non fare niente e vai 
 sum:
     movb (%esi), %al
     cmp $43, %al
-    jne subtraction
+    jne dash
 
     # 2 pop dallo stack, fai la somma, push nello stack
     popl %eax
@@ -83,20 +81,46 @@ sum:
     jmp lettura
 
 
-subtraction:
+dash:
     movb (%esi), %al
     cmp $45, %al
     jne multiplication
     
-    # se dopo la meno c'è uno spazio-> è una sottrazione
+    # se dopo il trattino c'è uno spazio-> è una sottrazione
     #       2 pop dallo stack
-    #       fai la somma
+    #       fai la sottrazione
     #       push nello stack
-    # altrimenti -> è l'inizio di un numero negativo
-    #       metti flag a -1
+negative_number:
+    movb 1(%esi), %al   # carattere successivo -> cifra: inizio di numero negativo
+    cmp $48, %al
+    jl operator_subtraction
+    cmp $57, %al
+    jg operator_subtraction
+
+    movl $-1, flag      # flag a -1 per rendere il numero negativo
 
     incl %esi              # vai al carattere successivo
     jmp lettura
+
+operator_subtraction:
+    movb 1(%esi), %al   # carattere successivo -> spazio/fine stringa: operazione di sottrazione
+    cmp $32, %al        # spazio
+    je subtraction
+    cmp $0, %al         # fine stringa
+    je subtraction
+
+    jmp invalid
+
+
+subtraction:
+    popl %eax           # sottraendo
+    popl %ebx           # minuendo
+    subl %eax, %ebx     # ebx = ebx - eax
+    pushl %ebx
+    
+    incl %esi           # vai al carattere successivo
+    jmp lettura
+
 
 multiplication:
     movb (%esi), %al
@@ -106,7 +130,7 @@ multiplication:
     # 2 pop dallo stack, fai il prodotto, push nello stack
     popl %eax
     popl %ebx
-    mul %ebx
+    imul %ebx
     pushl %eax
 
     incl %esi              # vai al carattere successivo
@@ -117,9 +141,17 @@ division:
     cmp $47, %al
     jne digit
 
-    # 2 pop dallo stack
-    # fai la divisione
-    # push nello stack
+    popl %ebx       # divisore != 0
+    cmp $0, %ebx
+    je invalid
+
+    popl %eax       # dividendo > 0
+    cmp $0, %eax
+    jl invalid
+
+    xorl %edx, %edx
+    idiv %ebx
+    pushl %eax
 
     incl %esi              # vai al carattere successivo
     jmp lettura
@@ -159,8 +191,19 @@ invalid:
     leal invalid_string, %ecx
     movl invalid_string_len, %edx
     int $0x80
+    
+fq:
+    movl %esp, %eax     
+    movl %ebp, %ebx
+    subl %eax, %ebx     # EBX = EBP - ESP
 
+    subl $4, %ebx
+    addl %ebx, %esp
+    
 
 fine:
+    # popl %edx   # da rimuovere
+
+
     popl %ebp
     ret
