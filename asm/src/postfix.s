@@ -8,7 +8,7 @@ flag:
 
 
 invalid_string:
-    .ascii "Invalid"
+    .ascii "Invalid\n"
 invalid_string_len:
     .long . - invalid_string
 
@@ -18,24 +18,27 @@ invalid_string_len:
 
 
 postfix:
-    pushl %ebp
-    movl %esp, %ebp
-    movl 8(%ebp), %ecx     # puntatore a stringa INPUT
-    movl 4(%ebp), %ebx     # puntatore a stringa OUTPUT
+    # prologue
+    pushl %ebp              # push del "vecchio" base pointer
+    movl %esp, %ebp         # nuovo base pointer -> punta allo stack pointer
+    
+    # esp punta all'indirizzo di return
+    movl 8(%ebp), %ecx      # esp+8: puntatore a stringa INPUT
+    movl 4(%ebp), %ebx      # esp+4: puntatore a stringa OUTPUT
 
-    movl %ecx, %esi        # in ESI -> puntatore a stringa INPUT
+    movl %ecx, %esi         # in ESI -> puntatore a stringa INPUT
 
 lettura:
     # STAMPA PER DEBUG
-    movl $4, %eax         # stampa di un carattere
+/*     movl $4, %eax           # stampa di un carattere
     movl $1, %ebx
     movl %esi, %ecx
     movl $1, %edx
-    int $0x80
+    int $0x80 */
     
     # Controllo se ultimo carattere
-    movb (%esi), %al                    # una cifra è 1 byte -> usiamo la parte bassa di eax (al)
-    cmp $0, %al        # '\0'
+    movb (%esi), %al        # una cifra è 1 byte -> usiamo la parte bassa di eax (al)
+    cmp $0, %al             # controllo carattere di fine stringa '\0'
     je fine
 
 space:
@@ -161,27 +164,24 @@ digit:
     movb (%esi), %al
 
     cmp $48, %al           # compara con '0'
-    jl invalid              # se minore è invalido
+    jl invalid             # se minore è invalido
 
     cmp $57, %al           # compara con '9'
-    jg invalid              # se maggiore è invalido
+    jg invalid             # se maggiore è invalido
 
     # operazioni in caso di numero
     # se e solo se buffer != 0: buffer *= 10
     # buffer += cifra
-    movl buffer, %eax       # eax -> buffer
+    movl buffer, %eax      # eax -> buffer
     movl $10, %ebx
-    mul %ebx                # moltiplica eax per 10
+    mul %ebx               # moltiplica eax per 10
 
     xorl %ebx, %ebx        # azzero tutto ebx (32 bit)
     movb (%esi), %bl       # sposto la cifra nella parte bassa di ebx (bl)
     subb $48, %bl          # tolgo 48 per avere il valore in intero
     addl %ebx, %eax        # eseguo la somma
     movl %eax, buffer      # riporto il valore nel buffer
-
-/* test_buf:                # per vedere il contenuto di buffer perché non sappiamo farlo da gdb
-    movl buffer, %ecx */
-    
+  
     incl %esi              # vai al carattere successivo
     jmp lettura            # ripeti
 
@@ -192,18 +192,9 @@ invalid:
     movl invalid_string_len, %edx
     int $0x80
     
-fq:
-    movl %esp, %eax     
-    movl %ebp, %ebx
-    subl %eax, %ebx     # EBX = EBP - ESP
-
-    subl $4, %ebx
-    addl %ebx, %esp
-    
 
 fine:
-    # popl %edx   # da rimuovere
-
+    movl %ebp, %esp         # ripristino lo stack pointer al base pointer
 
     popl %ebp
     ret
