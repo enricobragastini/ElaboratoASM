@@ -20,13 +20,11 @@ int main(int argc, char *argv[]) {
 
 char* input;
 char output[10];
-    
     //**********************************
     // Recupera input dal file
     //**********************************
     
     input = retrieve_input(argv[1]);
-    
 
     //**********************************
     // Chiamata assembly

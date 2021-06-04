@@ -8,7 +8,7 @@ flag:
 
 
 invalid_string:
-    .ascii "Invalid\n"
+    .ascii "Invalid\0"
 invalid_string_len:
     .long . - invalid_string
 
@@ -22,11 +22,9 @@ postfix:
     pushl %ebp              # push del "vecchio" base pointer
     movl %esp, %ebp         # nuovo base pointer -> punta allo stack pointer
     
-    # esp punta all'indirizzo di return
-    movl 8(%ebp), %ecx      # esp+8: puntatore a stringa INPUT
-    movl 4(%ebp), %ebx      # esp+4: puntatore a stringa OUTPUT
+    movl 8(%ebp), %esi      # ebp+8: puntatore a stringa INPUT
+    movl 12(%ebp), %edi     # ebp+12: puntatore a stringa OUTPUT
 
-    movl %ecx, %esi         # in ESI -> puntatore a stringa INPUT
 
 lettura:
     # STAMPA PER DEBUG
@@ -39,7 +37,7 @@ lettura:
     # Controllo se ultimo carattere
     movb (%esi), %al        # una cifra è 1 byte -> usiamo la parte bassa di eax (al)
     cmp $0, %al             # controllo carattere di fine stringa '\0'
-    je fine
+    je print_result
 
 space:
     movb (%esi), %al
@@ -65,8 +63,7 @@ space:
     movl $0, buffer
 
 operator_do_nothing:        # se prima c'era un operatore non fare niente e vai avanti
-    incl %esi               # vai al carattere successivo
-    jmp lettura
+    jmp next_char
 
 
 sum:
@@ -80,8 +77,7 @@ sum:
     addl %eax, %ebx
     pushl %ebx
 
-    incl %esi              # vai al carattere successivo
-    jmp lettura
+    jmp next_char
 
 
 dash:
@@ -102,8 +98,7 @@ negative_number:
 
     movl $-1, flag      # flag a -1 per rendere il numero negativo
 
-    incl %esi              # vai al carattere successivo
-    jmp lettura
+    jmp next_char
 
 operator_subtraction:
     movb 1(%esi), %al   # carattere successivo -> spazio/fine stringa: operazione di sottrazione
@@ -121,8 +116,7 @@ subtraction:
     subl %eax, %ebx     # ebx = ebx - eax
     pushl %ebx
     
-    incl %esi           # vai al carattere successivo
-    jmp lettura
+    jmp next_char
 
 
 multiplication:
@@ -136,8 +130,7 @@ multiplication:
     imul %ebx
     pushl %eax
 
-    incl %esi              # vai al carattere successivo
-    jmp lettura
+    jmp next_char
 
 division:
     movb (%esi), %al
@@ -156,8 +149,7 @@ division:
     idiv %ebx
     pushl %eax
 
-    incl %esi              # vai al carattere successivo
-    jmp lettura
+    jmp next_char
 
 
 digit:
@@ -181,20 +173,85 @@ digit:
     subb $48, %bl          # tolgo 48 per avere il valore in intero
     addl %ebx, %eax        # eseguo la somma
     movl %eax, buffer      # riporto il valore nel buffer
-  
+
+
+next_char:
     incl %esi              # vai al carattere successivo
     jmp lettura            # ripeti
 
 invalid:
-    movl $4, %eax
-    movl $1, %ebx
-    leal invalid_string, %ecx
-    movl invalid_string_len, %edx
-    int $0x80
-    
+    movl invalid_string_len, %ecx
+    leal invalid_string, %esi
+
+    invalid_string_loop:
+        movb (%esi), %al
+        movb %al, (%edi)
+        incl %esi
+        incl %edi
+        loop invalid_string_loop
+    jmp fine
+
+
+print_result:
+    popl %eax   # intero completo da stampare
+    movl $0, %ecx   # contatore cifre
+
+    cmp $0, %eax
+    jge positive_number
+    # il numero è negativo
+    movl $-1, flag  # flag a -1
+    movl $-1, %ebx
+    imul %ebx       # rendiamo eax positivo
+
+    positive_number:
+        pushl $-48
+        incl %ecx
+
+        continue_division:
+            cmp $10, %eax   # valuta se c'è solo una cifra
+            jge divide
+
+            # se rimane solo una cifra (è la più significativa)
+            pushl %eax
+            incl %ecx
+
+            # controllo se lavoriamo con un numero negativo
+            movl $-1, %edx
+            cmp flag, %edx 
+            jne skip_dash
+            # numero negativo -> aggiungiamo il '-' davanti
+            pushl $-3
+            incl %ecx
+
+            skip_dash:
+            mov  %ecx, %ebx
+            jmp print
+
+        divide:
+            movl $0, %edx       
+            movl $10, %ebx          # divisore in ebx
+            divl %ebx               # divisione eax/ebx: in eax quoziente, in edx resto
+
+            pushl %edx              # push del resto
+            incl %ecx               # incrementa contatore cifre
+
+            jmp continue_division   # comincia da capo
+
+        print:
+            cmp $0, %ebx            # se ho finito le cifre da stampare
+            je fine                 # termino l'esecuzione
+
+            popl %eax 
+            addb $48, %al           # ottengo il valore ascii
+            movb %al, (%edi)
+
+            decl %ebx               # decremento il contatore delle cifre
+            incl %edi               # incremento il puntatore al carattere successivo
+
+            jmp print
 
 fine:
-    movl %ebp, %esp         # ripristino lo stack pointer al base pointer
+    movl %ebp, %esp     # riporto lo stack pointer al base pointer
 
     popl %ebp
     ret
