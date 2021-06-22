@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt,oneside]{book}
+
+% PACCHETTI
+\usepackage{hyperref}           % hyperlinks
+\usepackage{tabto}              % strumento per inserire tab nel testo
+\usepackage[                    % geometria della pagina
+    a4paper,
+    inner=2cm,
+    outer=3cm,
+    top=3cm,
+    bottom=3cm,
+    bindingoffset=1.2cm,
+    headheight=14pt
+]{geometry}
+\usepackage[utf8]{inputenc}     % 3 pacchetti per l'italiano
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}           % custom chapter titles
+
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage[arrowdel]{physics} 
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usepackage{graphicx}           % IMMAGINI
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+
+\usepackage{csquotes}
+\usepackage{caption}
+
+\usepackage{listings}
+%\usepackage{minted}
+
+% INFORMAZIONI SUL DOCUMENTO
+\title{
+    \Large{\textbf{Elaborato Assembly}} \\
+    Architettura degli Elaboratori      \\
+    A.A. 2020/2021 - Corso di Laurea in Informatica
+    }
+%\author{Enrico Bragastini - VR456374 \\ Davide Bianchini - VR456697 \\ Andrea Mafficini - VRxxxxxx}
+\author{
+  Enrico Bragastini\\
+  \texttt{VR456374}
+  \and
+  Davide Bianchini \\
+  \texttt{VR456697}
+  \and
+  Andrea Mafficini \\
+  \texttt{VR462441}
+}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\LARGE}
+\date{}
+
+% aggiugere logo e migliorare lo stile
+
+
+% CONTENUTO
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\nouppercase\leftmark}
+\cfoot{\thepage}
+\frontmatter
+
+% Prima pagina - Titolo
+\maketitle
+\tableofcontents
+
+\mainmatter
+\chapter{Descrizione dell'elaborato}
+La \textbf{notazione polacca inversa} (reverse polish notation, \textbf{RPN}) è una notazione per la scrittura di espressioni aritmetiche in cui gli operatori binari, 
+anziché utilizzare la tradizionale notazione infissa, usano quella postfissa; ad esempio, l’espressione $5 + 2$ in RPN verrebbe scritta $5 \; 2 \; +$. La \textbf{RPN} è 
+particolarmente utile perché \emph{non necessita dell’utilizzo di parentesi}. 
+
+Si intende realizzare un programma in assembly che, letta in input una stringa rappresentante un’espressione ben formata in \textbf{RPN}, scriva in output il risultato ottenuto dalla valutazione dell’espressione.
+Per il calcolo di un'espressione in \textbf{RPN} si considerano solamente gli operatori fondamentali: somma, sottrazione, moltiplicazione e divisione.
+Nel caso in cui l'espressione contenga caratteri diversi da numeri o da operatori, verrà restituita come output la stringa \verb|Invalid|.
+
+Il codice sorgente \emph{main.c} fa una chiamata a una funzione \emph{extern} chiamata \emph{postfix} scritta in assembly. Questa funzione riceve come parametri due puntatori ai relativi array
+che rappresentano la stringa di input e la stringa di output. La funzione si occuperà quindi di leggere la stringa di input, elaborare il risultato e scriverlo nell'array di output.
+La lettura e la scrittura su file vengono gestite dal \emph{main.c}.
+
+~\newline
+\underline{Esempio:}
+\begin{lstlisting}[language=Bash, showstringspaces=false]
+    $ echo "100 10 - 10 * -4 /" > in_1.txt
+    $ ./postfix
+    $ cat out_1.txt 
+      -225
+\end{lstlisting}
+L'espressione postfissa ``100 10 - 10 * -4 /'' corrisponde all'espressione in notazione infissa $(100-10) * 10 / (-4)$, che dà come risultato $-225$.
+
+\end{document}
