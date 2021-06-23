@@ -1,7 +1,7 @@
 # VARIABILI
 .section .data
 
-buffer:         
+buffer:
     .int 0
 
 flag:
@@ -21,16 +21,16 @@ invalid_string_len:
 postfix:
     pushl %ebp              # push del "vecchio" base pointer
 
-    # pushl %eax
-    # pushl %ebx
-    # pushl %ecx
-    # pushl %edx
-    # pushl %esi
-    # pushl %edi
+    pushl %eax
+    pushl %ebx
+    pushl %ecx
+    pushl %edx
+    pushl %esi
+    pushl %edi
 
     movl %esp, %ebp         # nuovo base pointer -> punta allo stack pointer
-    movl 8(%ebp), %esi      # ebp+8: puntatore a stringa INPUT
-    movl 12(%ebp), %edi     # ebp+12: puntatore a stringa OUTPUT
+    movl 32(%ebp), %esi      # ebp+8: puntatore a stringa INPUT
+    movl 36(%ebp), %edi     # ebp+12: puntatore a stringa OUTPUT
 
 
 lettura:
@@ -199,39 +199,36 @@ invalid:
 
 
 print_result:       # Scrittura del risultato sull'array di output
-    popl %eax       # Intero da stampare
-    movl $0, %ecx   # Contatore cifre
+    popl %eax               # Intero da stampare
+    movl $0, %ecx           # Contatore cifre
 
-    cmp $0, %eax
-    jge positive_number     # salta se il numero è positivo
+    cmp $0, %eax            # controlla se il numero è positivo e
+    jge positive_number     # nel caso evita le seguenti due istruzioni
 
     # se il numero è negativo
-    movl $-1, flag  # flag a -1
-    movl $-1, %ebx
-    imul %ebx       # rendiamo eax positivo
+    movl $-1, flag          # flag a -1 -> mi ricordo che il numero è negativo
+    neg %eax                # rendo eax positivo
 
     positive_number:
-        pushl $-48
+        pushl $0            # carattere di fine stringa
         incl %ecx
 
         continue_division:
-            cmp $10, %eax   # valuta se c'è solo una cifra
-            jge divide
+            cmp $10, %eax   # se il numero delle cifre è maggiore di 1
+            jge divide      # salta alla sezione di separazione delle cifre
 
-            # se rimane solo una cifra (è la più significativa)
-            pushl %eax
+            # quando rimane solo una cifra (ovvero la più significativa)
+            addl $48, %eax
+            pushl %eax      # push dell'ultimo valore ascii
             incl %ecx
 
             # controllo se lavoriamo con un numero negativo
-            movl $-1, %edx
-            cmp flag, %edx 
-            jne skip_dash
-            # numero negativo -> aggiungiamo il '-' davanti
-            pushl $-3
-            incl %ecx
+            cmpl $-1, flag 
+            jne print
 
-            skip_dash:
-            mov  %ecx, %ebx
+            # numero negativo -> aggiungiamo il '-' davanti
+            pushl $45
+            incl %ecx
             jmp print
 
         divide:
@@ -239,32 +236,33 @@ print_result:       # Scrittura del risultato sull'array di output
             movl $10, %ebx          # divisore in ebx
             divl %ebx               # divisione eax/ebx: in eax quoziente, in edx resto
 
-            pushl %edx              # push del resto
-            incl %ecx               # incrementa contatore cifre
+            addb $48, %dl          # aggiungo 48 al resto -> ottengo il valore ascii della cifra
+            pushl %edx              # push del carattere ascii
 
+            incl %ecx               # incrementa contatore cifre
             jmp continue_division   # comincia da capo
 
         print:
-            cmp $0, %ebx            # se ho finito le cifre da stampare
+            cmp $0, %ecx            # se ho finito le cifre da stampare
             je fine                 # termino l'esecuzione
 
-            popl %eax 
-            addb $48, %al           # ottengo il valore ascii
+            popl %eax
             movb %al, (%edi)
 
-            decl %ebx               # decremento il contatore delle cifre
+            decl %ecx               # decremento il contatore delle cifre
             incl %edi               # incremento il puntatore al carattere successivo
+            jmp print
 
 
 fine:
     movl %ebp, %esp     # riporto lo stack pointer al base pointer
 
-    # popl %edi
-    # popl %esi
-    # popl %edx
-    # popl %ecx
-    # popl %ebx
-    # popl %eax
+    popl %edi
+    popl %esi
+    popl %edx
+    popl %ecx
+    popl %ebx
+    popl %eax
 
     popl %ebp
     ret
