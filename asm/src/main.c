@@ -19,12 +19,14 @@ void  write_output(char* filename,char* output);    // Scrive il risultato su un
 int main(int argc, char *argv[]) {
 
 char* input;
-char output[10];
+char output[12];
+    
     //**********************************
     // Recupera input dal file
     //**********************************
     
     input = retrieve_input(argv[1]);
+    
 
     //**********************************
     // Chiamata assembly

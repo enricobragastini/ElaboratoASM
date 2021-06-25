@@ -29,8 +29,8 @@ postfix:
     pushl %edi
 
     movl %esp, %ebp         # nuovo base pointer -> punta allo stack pointer
-    movl 32(%ebp), %esi      # ebp+8: puntatore a stringa INPUT
-    movl 36(%ebp), %edi     # ebp+12: puntatore a stringa OUTPUT
+    movl 32(%ebp), %esi     # ebp+32: puntatore a stringa INPUT
+    movl 36(%ebp), %edi     # ebp+36: puntatore a stringa OUTPUT
 
 
 lettura:
@@ -236,7 +236,7 @@ print_result:       # Scrittura del risultato sull'array di output
             movl $10, %ebx          # divisore in ebx
             divl %ebx               # divisione eax/ebx: in eax quoziente, in edx resto
 
-            addb $48, %dl          # aggiungo 48 al resto -> ottengo il valore ascii della cifra
+            addb $48, %dl           # aggiungo 48 al resto -> ottengo il valore ascii della cifra
             pushl %edx              # push del carattere ascii
 
             incl %ecx               # incrementa contatore cifre
