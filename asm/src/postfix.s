@@ -141,7 +141,7 @@ division:
     cmp $47, %al            # se non è uno slash
     jne digit               # salta al controllo successivo
 
-    popl %ebx               # il divisore  deve essere diverso da 0
+    popl %ebx               # il divisore deve essere diverso da 0
     cmp $0, %ebx
     je invalid
 
@@ -178,7 +178,6 @@ digit:
     addl %ebx, %eax        # eseguo la somma
     movl %eax, buffer      # riporto il valore nel buffer
 
-
 next_char:
     incl %esi              # vai al carattere successivo
     jmp lettura            # ripeti
@@ -196,7 +195,6 @@ invalid:
         loop invalid_string_loop    # decrementa ecx e fa loop finché non arriva a ecx == 0
 
     jmp fine
-
 
 print_result:       # Scrittura del risultato sull'array di output
     popl %eax               # Intero da stampare

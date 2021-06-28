@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.22)  22 JUN 2021 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.22)  25 JUN 2021 12:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -177,51 +177,41 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count272
 ) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-) (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box47
-\beforetitleunit=\skip50
-\aftertitleunit=\skip51
-\ttl@plus=\dimen154
-\ttl@minus=\dimen155
-\ttl@toksa=\toks19
-\titlewidth=\dimen156
-\titlewidthlast=\dimen157
-\titlewidthfirst=\dimen158
 ) (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip52
-\f@nch@O@elh=\skip53
-\f@nch@O@erh=\skip54
-\f@nch@O@olh=\skip55
-\f@nch@O@orh=\skip56
-\f@nch@O@elf=\skip57
-\f@nch@O@erf=\skip58
-\f@nch@O@olf=\skip59
-\f@nch@O@orf=\skip60
+\f@nch@headwidth=\skip50
+\f@nch@O@elh=\skip51
+\f@nch@O@erh=\skip52
+\f@nch@O@olh=\skip53
+\f@nch@O@orh=\skip54
+\f@nch@O@elf=\skip55
+\f@nch@O@erf=\skip56
+\f@nch@O@olf=\skip57
+\f@nch@O@orf=\skip58
 ) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \c@tracingmulticols=\count273
-\mult@box=\box48
-\multicol@leftmargin=\dimen159
+\mult@box=\box47
+\multicol@leftmargin=\dimen154
 \c@unbalance=\count274
 \c@collectmore=\count275
 \doublecol@number=\count276
 \multicoltolerance=\count277
 \multicolpretolerance=\count278
-\full@width=\dimen160
-\page@free=\dimen161
-\premulticols=\dimen162
-\postmulticols=\dimen163
-\multicolsep=\skip61
-\multicolbaselineskip=\skip62
-\partial@page=\box49
-\last@line=\box50
-\maxbalancingoverflow=\dimen164
-\mult@rightbox=\box51
-\mult@grightbox=\box52
-\mult@gfirstbox=\box53
-\mult@firstbox=\box54
+\full@width=\dimen155
+\page@free=\dimen156
+\premulticols=\dimen157
+\postmulticols=\dimen158
+\multicolsep=\skip59
+\multicolbaselineskip=\skip60
+\partial@page=\box48
+\last@line=\box49
+\maxbalancingoverflow=\dimen159
+\mult@rightbox=\box50
+\mult@grightbox=\box51
+\mult@gfirstbox=\box52
+\mult@firstbox=\box53
+\@tempa=\box54
 \@tempa=\box55
 \@tempa=\box56
 \@tempa=\box57
@@ -258,15 +248,14 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box88
 \@tempa=\box89
 \@tempa=\box90
-\@tempa=\box91
 \c@minrows=\count279
 \c@columnbadness=\count280
 \c@finalcolumnbadness=\count281
-\last@try=\dimen165
-\multicolovershoot=\dimen166
-\multicolundershoot=\dimen167
-\mult@nat@firstbox=\box92
-\colbreak@box=\box93
+\last@try=\dimen160
+\multicolovershoot=\dimen161
+\multicolundershoot=\dimen162
+\mult@nat@firstbox=\box91
+\colbreak@box=\box92
 \mc@col@check@num=\count282
 ) (/usr/share/texmf-dist/tex/latex/physics/physics.sty
 Package: physics 
@@ -275,21 +264,21 @@ Package: expl3 2021-02-18 L3 programming layer (loader)
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count283
-\l__pdf_internal_box=\box94
+\l__pdf_internal_box=\box93
 )) (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.sty (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip63
+\@mathmargin=\skip61
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
-\ex@=\dimen168
+\@emptytoks=\toks19
+\ex@=\dimen163
 )) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen169
+\pmbraise@=\dimen164
 ) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
@@ -303,9 +292,9 @@ LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box95
-\strutbox@=\box96
-\big@size=\dimen170
+\Mathstrutbox@=\box94
+\strutbox@=\box95
+\big@size=\dimen165
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count289
@@ -313,29 +302,29 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \dotsspace@=\muskip17
 \c@parentequation=\count291
 \dspbrk@lvl=\count292
-\tag@help=\toks21
+\tag@help=\toks20
 \row@=\count293
 \column@=\count294
 \maxfields@=\count295
-\andhelp@=\toks22
-\eqnshift@=\dimen171
-\alignsep@=\dimen172
-\tagshift@=\dimen173
-\tagwidth@=\dimen174
-\totwidth@=\dimen175
-\lineht@=\dimen176
-\@envbody=\toks23
-\multlinegap=\skip64
-\multlinetaggap=\skip65
-\mathdisplay@stack=\toks24
+\andhelp@=\toks21
+\eqnshift@=\dimen166
+\alignsep@=\dimen167
+\tagshift@=\dimen168
+\tagwidth@=\dimen169
+\totwidth@=\dimen170
+\lineht@=\dimen171
+\@envbody=\toks22
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks25
-\pgfutil@tempdima=\dimen177
-\pgfutil@tempdimb=\dimen178
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen172
+\pgfutil@tempdimb=\dimen173
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box97
+\pgfutil@abb=\box96
 ) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2020/12/27 v3.1.8b (3.1.8b)
 ))
@@ -353,35 +342,35 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
  (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen179
-\Gin@req@width=\dimen180
+\Gin@req@height=\dimen174
+\Gin@req@width=\dimen175
 ) (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks26
-\pgfkeys@temptoks=\toks27
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks28
+\pgfkeys@tmptoks=\toks27
 ))
-\pgf@x=\dimen181
-\pgf@y=\dimen182
-\pgf@xa=\dimen183
-\pgf@ya=\dimen184
-\pgf@xb=\dimen185
-\pgf@yb=\dimen186
-\pgf@xc=\dimen187
-\pgf@yc=\dimen188
-\pgf@xd=\dimen189
-\pgf@yd=\dimen190
+\pgf@x=\dimen176
+\pgf@y=\dimen177
+\pgf@xa=\dimen178
+\pgf@ya=\dimen179
+\pgf@xb=\dimen180
+\pgf@yb=\dimen181
+\pgf@xc=\dimen182
+\pgf@yc=\dimen183
+\pgf@xd=\dimen184
+\pgf@yd=\dimen185
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
 \c@pgf@counta=\count296
 \c@pgf@countb=\count297
 \c@pgf@countc=\count298
 \c@pgf@countd=\count299
-\t@pgf@toka=\toks29
-\t@pgf@tokb=\toks30
-\t@pgf@tokc=\toks31
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
 \pgf@sys@id@count=\count300
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
@@ -415,52 +404,52 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen191
+\pgfmath@dimen=\dimen186
 \pgfmath@count=\count303
-\pgfmath@box=\box98
-\pgfmath@toks=\toks32
-\pgfmath@stack@operand=\toks33
-\pgfmath@stack@operation=\toks34
+\pgfmath@box=\box97
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
 ) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count304
 )) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@picminx=\dimen192
-\pgf@picmaxx=\dimen193
-\pgf@picminy=\dimen194
-\pgf@picmaxy=\dimen195
-\pgf@pathminx=\dimen196
-\pgf@pathmaxx=\dimen197
-\pgf@pathminy=\dimen198
-\pgf@pathmaxy=\dimen199
-\pgf@xx=\dimen256
-\pgf@xy=\dimen257
-\pgf@yx=\dimen258
-\pgf@yy=\dimen259
-\pgf@zx=\dimen260
-\pgf@zy=\dimen261
+\pgf@picminx=\dimen187
+\pgf@picmaxx=\dimen188
+\pgf@picminy=\dimen189
+\pgf@picmaxy=\dimen190
+\pgf@pathminx=\dimen191
+\pgf@pathmaxx=\dimen192
+\pgf@pathminy=\dimen193
+\pgf@pathmaxy=\dimen194
+\pgf@xx=\dimen195
+\pgf@xy=\dimen196
+\pgf@yx=\dimen197
+\pgf@yy=\dimen198
+\pgf@zx=\dimen199
+\pgf@zy=\dimen256
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@path@lastx=\dimen262
-\pgf@path@lasty=\dimen263
+\pgf@path@lastx=\dimen257
+\pgf@path@lasty=\dimen258
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@shorten@end@additional=\dimen264
-\pgf@shorten@start@additional=\dimen265
+\pgf@shorten@end@additional=\dimen259
+\pgf@shorten@start@additional=\dimen260
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfpic=\box99
-\pgf@hbox=\box100
-\pgf@layerbox@main=\box101
+\pgfpic=\box98
+\pgf@hbox=\box99
+\pgf@layerbox@main=\box100
 \pgf@picture@serial@count=\count305
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgflinewidth=\dimen266
+\pgflinewidth=\dimen261
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@pt@x=\dimen267
-\pgf@pt@y=\dimen268
-\pgf@pt@temp=\dimen269
+\pgf@pt@x=\dimen262
+\pgf@pt@y=\dimen263
+\pgf@pt@temp=\dimen264
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -469,17 +458,17 @@ File: pgfcoreobjects.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfarrowsep=\dimen270
+\pgfarrowsep=\dimen265
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@max=\dimen271
+\pgf@max=\dimen266
 \pgf@sys@shading@range@num=\count306
 \pgf@shadingcount=\count307
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfexternal@startupbox=\box102
+\pgfexternal@startupbox=\box101
 )) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -490,41 +479,41 @@ File: pgfcorepatterns.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfnodeparttextbox=\box103
+\pgfnodeparttextbox=\box102
 ) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@nodesepstart=\dimen272
-\pgf@nodesepend=\dimen273
+\pgf@nodesepstart=\dimen267
+\pgf@nodesepend=\dimen268
 ) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
 )) (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen274
-\pgffor@skip=\dimen275
-\pgffor@stack=\toks35
-\pgffor@toks=\toks36
+\pgffor@iter=\dimen269
+\pgffor@skip=\dimen270
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
 )) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \pgf@plot@mark@count=\count308
-\pgfplotmarksize=\dimen276
+\pgfplotmarksize=\dimen271
 )
-\tikz@lastx=\dimen277
-\tikz@lasty=\dimen278
-\tikz@lastxsaved=\dimen279
-\tikz@lastysaved=\dimen280
-\tikz@lastmovetox=\dimen281
-\tikz@lastmovetoy=\dimen282
-\tikzleveldistance=\dimen283
-\tikzsiblingdistance=\dimen284
-\tikz@figbox=\box104
-\tikz@figbox@bg=\box105
-\tikz@tempbox=\box106
-\tikz@tempbox@bg=\box107
+\tikz@lastx=\dimen272
+\tikz@lasty=\dimen273
+\tikz@lastxsaved=\dimen274
+\tikz@lastysaved=\dimen275
+\tikz@lastmovetox=\dimen276
+\tikz@lastmovetoy=\dimen277
+\tikzleveldistance=\dimen278
+\tikzsiblingdistance=\dimen279
+\tikz@figbox=\box103
+\tikz@figbox@bg=\box104
+\tikz@tempbox=\box105
+\tikz@tempbox@bg=\box106
 \tikztreelevel=\count309
 \tikznumberofchildren=\count310
 \tikznumberofcurrentchild=\count311
@@ -539,11 +528,11 @@ File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))) (/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen285
-\WF@size=\dimen286
+\wrapoverhang=\dimen280
+\WF@size=\dimen281
 \c@WF@wrappedlines=\count317
-\WF@box=\box108
-\WF@everypar=\toks37
+\WF@box=\box107
+\WF@everypar=\toks36
 Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
@@ -553,7 +542,7 @@ Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
 \csq@qlevel=\count321
 \csq@maxlvl=\count322
 \csq@tshold=\count323
-\csq@ltx@everypar=\toks38
+\csq@ltx@everypar=\toks37
  (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
 )
@@ -565,13 +554,13 @@ File: csquotes.cfg
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
  (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen287
-\captionmargin@=\dimen288
-\captionwidth=\dimen289
-\caption@tempdima=\dimen290
-\caption@indent=\dimen291
-\caption@parindent=\dimen292
-\caption@hangindent=\dimen293
+\captionmargin=\dimen282
+\captionmargin@=\dimen283
+\captionwidth=\dimen284
+\caption@tempdima=\dimen285
+\caption@indent=\dimen286
+\caption@parindent=\dimen287
+\caption@hangindent=\dimen288
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count324
@@ -580,26 +569,38 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 ) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count326
-\lst@gtempboxa=\box109
-\lst@token=\toks39
+\lst@gtempboxa=\box108
+\lst@token=\toks38
 \lst@length=\count327
-\lst@currlwidth=\dimen294
+\lst@currlwidth=\dimen289
 \lst@column=\count328
 \lst@pos=\count329
-\lst@lostspace=\dimen295
-\lst@width=\dimen296
+\lst@lostspace=\dimen290
+\lst@width=\dimen291
 \lst@newlines=\count330
 \lst@lineno=\count331
-\lst@maxwidth=\dimen297
+\lst@maxwidth=\dimen292
  (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 \c@lstnumber=\count332
 \lst@skipnumbers=\count333
-\lst@framebox=\box110
+\lst@framebox=\box109
 ) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box110
+\beforetitleunit=\skip64
+\aftertitleunit=\skip65
+\ttl@plus=\dimen293
+\ttl@minus=\dimen294
+\ttl@toksa=\toks39
+\titlewidth=\dimen295
+\titlewidthlast=\dimen296
+\titlewidthfirst=\dimen297
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -607,25 +608,25 @@ Package csquotes Info: Redefining alias 'default' -> 'italian'.
  (/home/stini/Documents/ElaboratoASM/relazione/relazione.aux)
 \openout1 = `relazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-Package hyperref Info: Link coloring OFF on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+Package hyperref Info: Link coloring OFF on input line 64.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -635,9 +636,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
  (/home/stini/Documents/ElaboratoASM/relazione/relazione.out) (/home/stini/Documents/ElaboratoASM/relazione/relazione.out)
 \@outlinefile=\write4
 \openout4 = `relazione.out'.
@@ -678,8 +679,8 @@ LaTeX Info: Redefining \nameref on input line 60.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 60.
-LaTeX Info: Redefining \it@ccap on input line 60.
+LaTeX Info: Redefining \it@ocap on input line 64.
+LaTeX Info: Redefining \it@ccap on input line 64.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count335
@@ -703,21 +704,26 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count341
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 70.
+<./images//logo-univr.png, id=31, 315.8199pt x 113.7048pt>
+File: ./images//logo-univr.png Graphic file (type png)
+<use ./images//logo-univr.png>
+Package pdftex.def Info: ./images//logo-univr.png  used on input line 74.
+(pdftex.def)             Requested size: 315.81912pt x 113.70451pt.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 74.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/stini/Documents/ElaboratoASM/relazione/relazione.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/stini/Documents/ElaboratoASM/relazione/./images//logo-univr.png>] (/home/stini/Documents/ElaboratoASM/relazione/relazione.toc)
 \tf@toc=\write5
 \openout5 = `relazione.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.72 \mainmatter
+l.76 \mainmatter
                  [1
 
 ]
@@ -729,23 +735,31 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) [1
 
 
-] (/home/stini/Documents/ElaboratoASM/relazione/relazione.aux)
+]
+Capitolo 2.
+[2
+
+]
+Capitolo 3.
+[3
+
+] [4] (/home/stini/Documents/ElaboratoASM/relazione/relazione.aux)
 Package rerunfilecheck Info: File `relazione.out' has not changed.
-(rerunfilecheck)             Checksum: C0C70A3C345638AF48EF64CB4CA17C60;176.
+(rerunfilecheck)             Checksum: 63E8D57FC4FB587C5E2A66604A6B0600;954.
  ) 
 Here is how much of TeX's memory you used:
- 25224 strings out of 478994
- 434877 string characters out of 5864751
- 945425 words of memory out of 5000000
- 42280 multiletter control sequences out of 15000+600000
+ 25251 strings out of 478994
+ 435268 string characters out of 5864751
+ 945492 words of memory out of 5000000
+ 42296 multiletter control sequences out of 15000+600000
  415041 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,6n,116p,435b,1186s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on /home/stini/Documents/ElaboratoASM/relazione/relazione.pdf (3 pages, 184007 bytes).
+ 113i,11n,116p,435b,1186s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on /home/stini/Documents/ElaboratoASM/relazione/relazione.pdf (6 pages, 264645 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 131 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

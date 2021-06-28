@@ -1,9 +1,9 @@
 import os
 
-bin_input   =   "/home/stini/Documents/ElaboratoASM/asm/bin/in_1.txt"
-bin_output  =   "/home/stini/Documents/ElaboratoASM/asm/bin/out_1.txt"
-postfix     =   "/home/stini/Documents/ElaboratoASM/asm/bin/postfix"
-istanza     =   "/home/stini/Documents/ElaboratoASM/materiale/istanze/{}_{}.txt"
+bin_input   =   "asm/bin/in_1.txt"
+bin_output  =   "asm/bin/out_1.txt"
+postfix     =   "asm/bin/postfix"
+istanza     =   "materiale/istanze/{}_{}.txt"
 
 
 def copy_file(path1, path2):

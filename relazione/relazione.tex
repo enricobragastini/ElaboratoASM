@@ -15,7 +15,6 @@
 \usepackage[utf8]{inputenc}     % 3 pacchetti per l'italiano
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{titlesec}           % custom chapter titles
 
 \usepackage{fancyhdr}
 \usepackage{multicol}
@@ -31,14 +30,19 @@
 \usepackage{caption}
 
 \usepackage{listings}
-%\usepackage{minted}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
 
 % INFORMAZIONI SUL DOCUMENTO
 \title{
-    \Large{\textbf{Elaborato Assembly}} \\
+    {\includegraphics{logo-univr.png}} \\
+    \LARGE{\textbf{Elaborato Assembly}} \\
     Architettura degli Elaboratori      \\
     A.A. 2020/2021 - Corso di Laurea in Informatica
-    }
+}
 %\author{Enrico Bragastini - VR456374 \\ Davide Bianchini - VR456697 \\ Andrea Mafficini - VRxxxxxx}
 \author{
   Enrico Bragastini\\
@@ -92,5 +96,72 @@ La lettura e la scrittura su file vengono gestite dal \emph{main.c}.
       -225
 \end{lstlisting}
 L'espressione postfissa ``100 10 - 10 * -4 /'' corrisponde all'espressione in notazione infissa $(100-10) * 10 / (-4)$, che dà come risultato $-225$.
+
+
+\chapter{Metodo di lavoro}
+
+Abbiamo deciso di lavorare sempre in gruppo, senza dividere il progetto in parti a cui lavorare singolarmente.
+Per comodità, abbiamo usufruito della piattaforma Zoom per lavorare tutti e tre contemporaneamente al progetto.
+
+Inoltre, per condividere il codice ed evitare spiacevoli inconvenienti, abbiamo fatto uso di Git e GitHub.
+
+~\newline
+Inizialmente, la necessità era quella di avere una visione generale del codice, abbiamo quindi creato varie etichette, per suddividere il programma.
+In ogni sezione abbiamo scritto delle \emph{pseudo-istruzioni} per descrivere cosa avrebbe fatto quella determinata parte di codice assembly.
+
+Una volta terminata questa fase iniziale di \emph{brainstorming}, abbiamo implementato e commentato uno ad uno il codice di ogni etichetta, testandone il corretto funzionamento 
+prima di passare alla etichetta successiva.
+
+
+\chapter{Codice Assembly}
+
+\section{Scelte progettuali e struttura del codice}
+Abbiamo scelto di non suddividere il codice in file multipli o di utilizzare ulteriori funzioni in quanto non ne abbiamo sentita la necessità. Il codice
+è stato ben suddiviso in sezioni utilizzando le \textbf{etichette}. Inoltre è ben commentato e non supera le 270 righe, per cui è facilmente leggibile e comprensibile. 
+
+~\newline
+Il sorgente contenuto nel file \emph{main.c} fa una chiamata alla funzione \emph{postfix} passandole come argomenti i puntatori agli array di input e output.
+Questi puntatori, che si trovano nello stack, vengono copiati nei registri \verb|%esi| e \verb|%edi|.
+
+Ciclicamente vengono letti uno alla volta tutti i caratteri della stringa in input. In base al carattere trovato vengono svolte determinate azioni:
+\begin{itemize}
+  \item \textbf{CIFRA}: Quando viene trovata una cifra, questa viene inserita nella variabile \emph{buffer}. Verrà fatta la push del buffer una volta trovato lo spazio che segue 
+  l'ultima cifra di un numero.
+
+  \item \textbf{SPAZIO}: Quando viene trovato uno spazio, è necessario valutare se questo si presenta dopo una cifra o dopo un operatore. Nel primo caso indica la fine di un numero,
+  si procederà quindi al push del buffer. Nel secondo caso nessuna operazione è necessaria, si procederà alla lettura del carattere successivo.
+
+  \item \textbf{SOMMA}: Quando viene trovato il carattere di somma, viene fatta la pop dei due operandi, che devono essere sommati e il risultato viene messo in pila.
+
+  \item \textbf{TRATTINO}: Quando viene trovato il trattino, è necessario fare delle considerazioni perché potrebbe indicare l'inizio di un numero negativo oppure l'operatore di sottrazione.
+  Viene quindi valutato il carattere successivo, se quest'ultimo è uno spazio viene eseguita la sottrazione in maniera analoga alla somma. Altrimenti si pone la 
+  variabile \emph{FLAG} a $-1$ utilizzata al momento della push del buffer, per negare il numero.
+
+  \item \textbf{MOLTIPLICAZIONE}: Quando viene trovato l'asterisco, viene fatta la pop dei due operandi, che devono essere moltiplicati. Il risultato viene messo in pila.
+
+  \item \textbf{DIVISIONE}: Quando viene trovato lo slash, ci si assicura inizialmente che il divisore sia diverso da zero e il dividendo sia maggiore di zero. Se queste condizioni
+  sono verificate, viene fatta la pop dei due operandi, viene eseguita la divisione e il risultato viene messo in pila.
+
+  \item \textbf{INVALID}: Il riscontro di un carattere invalido è conseguenza di tutti i controlli eseguiti precedentemente. Quando un carattere non risulta essere 
+  una cifra, un operatore o uno spazio, per forza sarà un carattere invalido. Verrà quindi stampata la stringa \verb|Invalid|.
+\end{itemize}
+
+\section{Variabili}
+Le variabili utilizzate sono quattro e tutte posizionate nella sezione \emph{.data}
+
+\begin{itemize}
+  \item \textbf{buffer}, di tipo \emph{int}, rappresenta il buffer in cui vengono salvate le cifre del numero che si sta leggendo. Il suo valore di default è 0 e viene riportata a tale 
+  valore alla fine della lettura di ogni numero.
+
+  \item \textbf{flag}, di tipo \emph{int}, rappresenta il segno del numero che si sta leggendo. Il suo valore di default è 1, ovvero numero positivo, viene settata a -1 ogni qualvolta si andrà
+  a leggere un numero negativo.
+
+  \item \textbf{invalid\_string}, di tipo \emph{ascii}, rappresenta la stringa da scrivere nella stringa output nel caso vengano trovati dei caratteri invalidi nella stringa di input.
+  
+  \item \textbf{invalid\_string\_len}, di tipo \emph{long}, rappresenta la lunghezza della stringa contenuta nella precedente variabile.
+\end{itemize}
+
+\section{Diagramma di flusso}
+
 
 \end{document}
