@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.22)  28 JUN 2021 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.22)  28 JUN 2021 12:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -744,11 +744,11 @@ Capitolo 3.
 [3
 
 ] [4]
-<./images//flowchart.png, id=83, 529.98pt x 1085.05376pt>
+<./images//flowchart.png, id=83, 1589.94pt x 3255.16125pt>
 File: ./images//flowchart.png Graphic file (type png)
 <use ./images//flowchart.png>
-Package pdftex.def Info: ./images//flowchart.png  used on input line 169.
-(pdftex.def)             Requested size: 305.75507pt x 625.96062pt.
+Package pdftex.def Info: ./images//flowchart.png  used on input line 172.
+(pdftex.def)             Requested size: 305.73082pt x 625.96062pt.
  [5 </home/stini/Documents/ElaboratoASM/relazione/./images//flowchart.png>] (/home/stini/Documents/ElaboratoASM/relazione/relazione.aux)
 Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: 63E8D57FC4FB587C5E2A66604A6B0600;954.
@@ -762,7 +762,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  113i,11n,116p,435b,1186s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on /home/stini/Documents/ElaboratoASM/relazione/relazione.pdf (7 pages, 316021 bytes).
+Output written on /home/stini/Documents/ElaboratoASM/relazione/relazione.pdf (7 pages, 472483 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

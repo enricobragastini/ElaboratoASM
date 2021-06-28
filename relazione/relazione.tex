@@ -76,7 +76,7 @@
 \mainmatter
 \chapter{Descrizione dell'elaborato}
 La \textbf{notazione polacca inversa} (reverse polish notation, \textbf{RPN}) è una notazione per la scrittura di espressioni aritmetiche in cui gli operatori binari, 
-anziché utilizzare la tradizionale notazione infissa, usano quella postfissa; ad esempio, l’espressione $5 + 2$ in RPN verrebbe scritta $5 \; 2 \; +$. La \textbf{RPN} è 
+anziché utilizzare la tradizionale notazione infissa, usano quella postfissa; ad esempio, l’espressione $5 + 2$ in \textbf{RPN} verrebbe scritta $5 \; 2 \; +$. La \textbf{RPN} è 
 particolarmente utile perché \emph{non necessita dell’utilizzo di parentesi}. 
 
 Si intende realizzare un programma in assembly che, letta in input una stringa rappresentante un’espressione ben formata in \textbf{RPN}, scriva in output il risultato ottenuto dalla valutazione dell’espressione.
@@ -103,15 +103,16 @@ L'espressione postfissa ``100 10 - 10 * -4 /'' corrisponde all'espressione in no
 Abbiamo deciso di lavorare sempre in gruppo, senza dividere il progetto in parti a cui lavorare singolarmente.
 Per comodità, abbiamo usufruito della piattaforma Zoom per lavorare tutti e tre contemporaneamente al progetto.
 
-Inoltre, per condividere il codice ed evitare spiacevoli inconvenienti, abbiamo fatto uso di Git e GitHub.
+Inoltre, per condividere il codice ed evitare spiacevoli inconvenienti, abbiamo salvato il lavoro volta per volta sulla piattaforma Github.
 
 ~\newline
 Inizialmente, la necessità era quella di avere una visione generale del codice, abbiamo quindi creato varie etichette, per suddividere il programma.
-In ogni sezione abbiamo scritto delle \emph{pseudo-istruzioni} per descrivere cosa avrebbe fatto quella determinata parte di codice assembly.
+Nelle sezioni così ottenute abbiamo scritto delle \emph{pseudo-istruzioni} per descrivere cosa avrebbe fatto quella determinata parte di codice assembly.
 
 Una volta terminata questa fase iniziale di \emph{brainstorming}, abbiamo implementato e commentato uno ad uno il codice di ogni etichetta, testandone il corretto funzionamento 
 prima di passare alla etichetta successiva.
-
+Finché non abbiamo portato a termine il programma, non c'era modo di vedere l'output sul file. Per verificare quindi che i calcoli fossero corretti abbiamo sfruttato il \textbf{gdb}
+per valutare il contenuto dei \emph{registri} e dello \emph{stack}.
 
 \chapter{Codice Assembly}
 
@@ -139,11 +140,11 @@ Ciclicamente vengono letti uno alla volta tutti i caratteri della stringa in inp
 
   \item \textbf{MOLTIPLICAZIONE}: Quando viene trovato l'asterisco, viene fatta la pop dei due operandi, che devono essere moltiplicati. Il risultato viene messo in pila.
 
-  \item \textbf{DIVISIONE}: Quando viene trovato lo slash, ci si assicura inizialmente che il divisore sia diverso da zero e il dividendo sia maggiore di zero. Se queste condizioni
+  \item \textbf{DIVISIONE}: Quando viene trovato lo slash, ci si assicura inizialmente che il dividendo sia maggiore di zero e il divisore sia diverso da zero. Se queste condizioni
   sono verificate, viene fatta la pop dei due operandi, viene eseguita la divisione e il risultato viene messo in pila.
 
   \item \textbf{INVALID}: Il riscontro di un carattere invalido è conseguenza di tutti i controlli eseguiti precedentemente. Quando un carattere non risulta essere 
-  una cifra, un operatore o uno spazio, per forza sarà un carattere invalido. Verrà quindi stampata la stringa \verb|Invalid|.
+  una cifra, un operatore o uno spazio, verrà considerato come un carattere invalido. Sarà quindi stampata la stringa \verb|Invalid|.
 \end{itemize}
 
 \section{Variabili}
@@ -151,14 +152,16 @@ Le variabili utilizzate sono quattro e tutte posizionate nella sezione \emph{.da
 
 \begin{itemize}
   \item \textbf{buffer}, di tipo \emph{int}, rappresenta il buffer in cui vengono salvate le cifre del numero che si sta leggendo. Il suo valore di default è 0 e viene riportata a tale 
-  valore alla fine della lettura di ogni numero.
+  valore alla fine della lettura di ogni numero. Ogni volta che viene letta una cifra, questa viene aggiunta al buffer con la seguente operazione: \verb|buffer = buffer * 10 + cifra|
 
   \item \textbf{flag}, di tipo \emph{int}, rappresenta il segno del numero che si sta leggendo. Il suo valore di default è 1, ovvero numero positivo, viene settata a -1 ogni qualvolta si andrà
   a leggere un numero negativo.
+  Questa variabile viene anche utilizzata nella fase di stampa del risultato, per tenere traccia del fatto che si sta per stampare un numero negativo, e quindi aggiungere
+  in pila anche il relativo trattino.
 
-  \item \textbf{invalid\_string}, di tipo \emph{ascii}, rappresenta la stringa da scrivere nella stringa output nel caso vengano trovati dei caratteri invalidi nella stringa di input.
+  \item \textbf{invalid\_string}, di tipo \emph{ascii}, rappresenta la stringa da scrivere nell'array di output, nel caso vengano trovati dei caratteri invalidi nella stringa di input.
   
-  \item \textbf{invalid\_string\_len}, di tipo \emph{long}, rappresenta la lunghezza della stringa contenuta nella precedente variabile.
+  \item \textbf{invalid\_string\_len}, di tipo \emph{long}, rappresenta il numero di caratteri contenuti nella precedente variabile.
 \end{itemize}
 
 \newpage
